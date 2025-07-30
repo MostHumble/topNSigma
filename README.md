@@ -4,7 +4,8 @@
 
 Large language models (LLMs) rely heavily on sampling methods to generate diverse and highquality text. While existing sampling methods like top-p and min-p have identified the detrimental effects of low-probability tails in LLMs’ outputs, they still fail to effectively distinguish between diversity and noise. This limitation stems from their reliance on probability-based metrics that are inherently sensitive to temperature scaling. Through empirical and theoretical analysis, we make two key discoveries: 
 - the pre-softmax logits exhibit a clear statistical separation between informative tokens and noise
-- we prove the mathematical equivalence of min-p and top-(1-p) under uniform distribution over logits. 
+- we prove the mathematical equivalence of min-p and top-(1-p) under uniform distribution over logits.
+
 These findings motivate the design of top-nσ, a novel sampling method that identifies informative tokens by eliminating noise directly in logit space. Unlike existing methods that become unstable at high temperatures, top-nσ achieves temperature-invariant token selection while preserving output diversity. Extensive experiments across reasoning and creative writing tasks demonstrate that our method consistently outperforms existing approaches, with particularly significant improvements in high-temperature settings.
 
 ## Implemenation:
